@@ -1,0 +1,42 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<!-- <table>
+
+    
+        {% for project in projects %}
+        <tr>
+            <td><a href="{% url 'update-project' project.id %}">Edit</a></td>
+            <td><a href="{% url 'delete-project' project.id %}">Delete</a></td>
+            <td><a href="{% url 'project' project.id %}">View</a></td>
+        </tr>
+        {% endfor %}
+</table> -->
+
+<!-- Main Section -->
+<main class="projects">
+    <section class="hero-section text-center">
+      
+      <div class="container container--narrow">
+        <div class="hero-section__box">
+          <h2>welcome into <span>UniProjects</span></h2>
+        </div>
+
+        <div class="hero-section__search">
+          <form class="form" action="#" method="get">
+            
+			<a class="btn btn--sub " href="{% url 'projects' %}"><h4>Explore</h4></a>
+			<!-- <a class="btn btn--sub" href="{% url 'create-project' %}"><h4>Upload project </h4></a> -->
+			<a class="btn btn--sub" href="{% url 'cnote' %}"><h4>Concept Note </h4></a>
+            
+          </form>
+        
+      </div>
+    </div>
+   
+
+
+  </main>
+
+{% endblock content %}
+

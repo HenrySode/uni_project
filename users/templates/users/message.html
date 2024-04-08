@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+
+{% block content %}
+  <!-- Main Section -->
+  <main class="messagePage my-xl">
+    <div class="content-box">
+      <div class="message">
+        <a class="backButton" href="{% url 'inbox' %}"><i class="im im-angle-left"></i></a>
+        <h2 class="message__subject">{{message.subject}}</h4>
+          <a href="#" class="message__author">{{ message.name }}</a>
+          <div class="message__body">{{ message.body|linebreaksbr }}</div>
+          <p class="message__date" style="color: rgb(107, 107, 253); margin-top: 10px; font-style: italic; font-weight: 800;">{{message.email}}</p>
+          <p class="message__date" style="color: rgb(29, 29, 121); margin-top: 10px;">{{message.created}}</p>
+      </div>
+    </div>
+  </main>
+{% endblock %}
