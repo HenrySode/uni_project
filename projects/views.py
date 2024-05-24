@@ -7,7 +7,7 @@ from .utils import searchProjects, paginateProjects
  
  
 def welcome(request):
-    return render(request, 'projects/welcome.html')
+    return render(request, 'projects/index.html')
  
 def projects(request):
     projects, search_query = searchProjects(request)

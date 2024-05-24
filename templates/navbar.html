@@ -15,7 +15,7 @@
         <ul class="header__menu">
           <li class="header__menuItem"><a href="{% url 'profiles' %}">Pioneers</a></li>
           <li class="header__menuItem"><a href="{% url 'projects' %}">Explore</a></li>
-          <li class="header__menuItem"><a href="{% url 'cnote' %}">ConceptNote</a></li>
+          <li class="header__menuItem"><a href="{% url 'view-cnote' %}">ConceptNote</a></li>
           
           {% if request.user.is_authenticated %}
           <li class="header__menuItem"><a href="{% url 'inbox' %}">Inbox</a></li>

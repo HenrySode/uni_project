@@ -14,7 +14,7 @@
         let page = this.dataset.page
       
         //Add hiden input to search form
-        searchForm.innerHTML += `<input value=${page} name="page" hiden/>`
+        searchForm.innerHTML += `<input value=${page} name="page"/>`
         //submit form
         searchForm.submit()
       })

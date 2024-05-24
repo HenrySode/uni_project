@@ -4,7 +4,6 @@ from . forms import CNoteForm
 from django.contrib import messages
 
 def concept_note(request):
-    cnoteObj = ConceptNote.objects.all()
     form = CNoteForm()
     
     if request.method == 'POST':
@@ -12,7 +11,12 @@ def concept_note(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Concept note successfully submited')
-            return redirect('projects')
+            return redirect('view-cnote')
         
-    context = {'cnoteObj':cnoteObj, 'form':form}
+    context = {'form':form}
     return render(request, 'cnote/cnote_form.html', context)
+
+def view_cnote(request):
+    objects = ConceptNote.objects.all()
+    context = {'objects':objects}
+    return render(request, 'cnote/view-cnote.html', context)

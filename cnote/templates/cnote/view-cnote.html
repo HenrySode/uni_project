@@ -1,0 +1,52 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+  <!-- Main Section -->
+  <main class="home">
+    <section class="hero-section text-center">
+      <div class="container container--narrow">
+        <div class="hero-section__box">
+          <h2 style="color: rgb(177, 177, 177);">BELOW ARE <span>CONCEPT NOTES</span> FROM DIFFERENT PIONEERS</h2>
+          <p style="color: white;">Click the button below to fill the form and check the existance of your concept note</p>
+        </div>
+
+        <div class="hero-section__search">
+
+          <a href="{% url 'create-cnote' %}">
+            <input class="btn btn--sub btn--lg" type="submit" value="Check your Concept Note" style="background-color: #1356ad" />
+          </a>
+
+      </div>
+      </div>
+    </section>
+    <!-- Search Result: DevList -->
+    <section class="devlist">
+      <div class="container">
+        <div class="grid grid--three">
+            {% for obj in objects %}
+            <div class="column card">
+                <div class="dev">
+                  <a href="" class="card__body">
+                    <div class="dev__profile">
+                      <div class="dev__meta">
+                        <h3>{{ obj.title }}</h3>
+                        <h5 style="padding-top: 6px;"><strong>Main Objective:</strong></h5>
+                        <p> {{ obj.main_object}}</p>
+                        <br>
+                     
+                        <p style="color: rgb(0, 121, 80);">{{ obj.created }}</p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+      </div>
+    </section>
+
+    {% include 'pagination.html' with queryset=profiles custom_range=custom_range%}
+  </main>
+{% endblock %}
